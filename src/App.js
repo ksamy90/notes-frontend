@@ -69,7 +69,10 @@ const App = () => {
       }, 5000);
     }
   };
-  const logoutUser = () => window.localStorage.removeItem("loggedNoteappUser");
+  const logoutUser = () => {
+    window.localStorage.removeItem("loggedNoteappUser");
+    setUser(null);
+  };
 
   const notesToShow = showAll ? notes : notes.filter((note) => note.important);
 
